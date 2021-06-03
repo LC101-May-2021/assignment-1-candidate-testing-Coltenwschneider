@@ -8,7 +8,7 @@ let candidateName = "";
 
 // TODO 1.2a: Define question, correctAnswer, and candidateAnswer //
 
-let question = "Who was the first American woman in space? ";
+let question = "What is your name? ";
 let correctAnswer = "Sally Ride";
 let candidateAnswer = "";
 let questions = 
@@ -49,7 +49,7 @@ function gradeQuiz(candidateAnswers) {
   let grade = 100;
   
   for (i = 0; i < correctAnswers.length; i++) {
-    if (candidateAnswers[i] != correctAnswers[i]) {
+    if (candidateAnswers[i].toLowerCase() != correctAnswers[i].toLowerCase()) {
       grade = grade - 20;
     }
   }
