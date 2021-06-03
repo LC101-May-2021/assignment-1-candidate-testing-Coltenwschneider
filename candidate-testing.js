@@ -7,9 +7,9 @@ const input = require('readline-sync');
 let candidateName = "";
 
 // TODO 1.2a: Define question, correctAnswer, and candidateAnswer //
-
-let question = "What is your name? ";
-let correctAnswer = "Sally Ride";
+ let question=""
+// let question = "Who was the first American woman in space? ";
+let correctAnswer="";
 let candidateAnswer = "";
 let questions = 
 ["Who was the first American woman in space? ",
@@ -29,10 +29,10 @@ let correctAnswers =
 let candidateAnswers = [];
 
 
+
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
-  let question = "What is your name? ";
-  candidateName = input.question(question);
+  candidateName = input.question("What is your name? ");
 }
 
 function askQuestion() {
@@ -41,19 +41,29 @@ function askQuestion() {
   candidateAnswers[i] = input.question(questions[i]);
   }
 
+  //candidateAnswer = input.question(question);
+
 }
 
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-
-  let grade = 100;
   
+  // if (candidateAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+  //   console.log("That is correct")
+  // }   
+  // else {
+  //   console.log("That is incorrect")
+  // }
+  let numCorrect = 0;
+
   for (i = 0; i < correctAnswers.length; i++) {
-    if (candidateAnswers[i].toLowerCase() != correctAnswers[i].toLowerCase()) {
-      grade = grade - 20;
+    if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
+      numCorrect++;
     }
   }
+  
+  let grade = (numCorrect) / (questions.length) * 100;
 
   if (grade >= 80) {
       console.log("Congratulations, you passed with a: " + grade);
@@ -61,14 +71,12 @@ function gradeQuiz(candidateAnswers) {
   else {
     console.log("You did not pass. You scored a: " + grade);
   }
-
-  return grade;
 }
 
 function runProgram() {
-  //askForName();
+  askForName();
   // TODO 1.1c: Ask for candidate's name //
-  // console.log("Hello " + candidateName);
+   console.log("Hello " + candidateName);
   askQuestion();
   gradeQuiz(this.candidateAnswers);
 }
