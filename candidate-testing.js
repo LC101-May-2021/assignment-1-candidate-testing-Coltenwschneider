@@ -60,6 +60,8 @@ function gradeQuiz(candidateAnswers) {
   else {
     console.log("You did not pass. You scored a: " + grade);
   }
+
+  return grade;
 }
 
 function runProgram() {
