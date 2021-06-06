@@ -6,6 +6,7 @@ const input = require('readline-sync');
 
 let candidateName = "";
 let numCorrect = 0;
+let grade = 0;
 
 // TODO 1.2a: Define question, correctAnswer, and candidateAnswer //
  //let question=""
@@ -56,7 +57,7 @@ function gradeQuiz(candidateAnswers) {
   // else {
   //   console.log("That is incorrect")
   // }
-  let grade = 0;
+  
 
   for (i = 0; i < correctAnswers.length; i++) {
     if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
@@ -64,10 +65,9 @@ function gradeQuiz(candidateAnswers) {
     }
   }
   
-  grade = (numCorrect) / (questions.length) * 100;
+  return grade = (numCorrect) / (questions.length) * 100;
 
 
-  return grade;
   
 }
 
@@ -84,7 +84,7 @@ function runProgram() {
     console.log("Your Answer: " + candidateAnswers[i]);
     console.log("Correct Answer: " + correctAnswers[i]);
   }
-  console.log("\n>>> Overall Grade: " + gradeQuiz(this.candidateAnswers) + "% (" + numCorrect + " of 5 responses correct) <<<")
+  console.log("\n>>> Overall Grade: " + grade + "% (" + numCorrect + " of 5 responses correct) <<<")
   if (grade < 80){
     console.log(">>> Status: FAILED <<<")
   } 
