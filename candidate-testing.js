@@ -84,13 +84,13 @@ function runProgram() {
     console.log("Your Answer: " + candidateAnswers[i]);
     console.log("Correct Answer: " + correctAnswers[i]);
   }
-  console.log("\n>>> Overall Grade: " + grade + "% (" + numCorrect + " of 5 responses correct) <<<")
-  if (grade < 80){
-    console.log(">>> Status: FAILED <<<")
-  } 
-  else {
-    console.log(">>> Status: PASSED <<<")
-  }
+  // console.log("\n>>> Overall Grade: " + grade + "% (" + numCorrect + " of 5 responses correct) <<<")
+  // if (grade < 80){
+  //   console.log(">>> Status: FAILED <<<")
+  // } 
+  // else {
+  //   console.log(">>> Status: PASSED <<<")
+  // }
   
 }
   
