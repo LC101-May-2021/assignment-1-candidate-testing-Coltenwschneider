@@ -65,7 +65,7 @@ function gradeQuiz(candidateAnswers) {
     }
   }
   
-  grade = (numCorrect) / (questions.length) * 100;
+  return grade = (numCorrect) / (questions.length) * 100;
 
 
   
@@ -78,12 +78,12 @@ function runProgram() {
    console.log("\nHello " + candidateName);
   askQuestion();
   gradeQuiz(this.candidateAnswers);
-  console.log("Candidate Name: " + candidateName);
-  for (let i = 0; i < candidateAnswers.length; i++){
-    console.log("\n" + (i+1) + ") " + questions[i]);
-    console.log("Your Answer: " + candidateAnswers[i]);
-    console.log("Correct Answer: " + correctAnswers[i]);
-  }
+  // console.log("Candidate Name: " + candidateName);
+  // for (let i = 0; i < candidateAnswers.length; i++){
+  //   console.log("\n" + (i+1) + ") " + questions[i]);
+  //   console.log("Your Answer: " + candidateAnswers[i]);
+  //   console.log("Correct Answer: " + correctAnswers[i]);
+  // }
   // console.log("\n>>> Overall Grade: " + grade + "% (" + numCorrect + " of 5 responses correct) <<<")
   // if (grade < 80){
   //   console.log(">>> Status: FAILED <<<")
