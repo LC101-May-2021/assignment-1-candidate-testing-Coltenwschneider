@@ -5,6 +5,8 @@ const input = require('readline-sync');
 // 1.1a: Define candidateName // 
 
 let candidateName = "";
+let numCorrect = 0;
+let grade = 0
 
 // TODO 1.2a: Define question, correctAnswer, and candidateAnswer //
  //let question=""
@@ -55,7 +57,7 @@ function gradeQuiz(candidateAnswers) {
   // else {
   //   console.log("That is incorrect")
   // }
-  let numCorrect = 0;
+  
 
   for (i = 0; i < correctAnswers.length; i++) {
     if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
@@ -63,24 +65,34 @@ function gradeQuiz(candidateAnswers) {
     }
   }
   
-  let grade = (numCorrect) / (questions.length) * 100;
+  grade = (numCorrect) / (questions.length) * 100;
 
-  if (grade >= 80) {
-      console.log("Congratulations, you passed with a: " + grade);
-  }
-  else {
-    console.log("You did not pass. You scored a: " + grade);
-  }
   return grade;
 }
+
 
 function runProgram() {
   askForName();
   // TODO 1.1c: Ask for candidate's name //
-   console.log("Hello " + candidateName);
+   console.log("\nHello " + candidateName);
   askQuestion();
   gradeQuiz(this.candidateAnswers);
+  console.log("Candidate Name: " + candidateName);
+  for (let i = 0; i < candidateAnswers.length; i++){
+    console.log("\n" + (i+1) + ") " + questions[i]);
+    console.log("Your Answer: " + candidateAnswers[i]);
+    console.log("Correct Answer: " + correctAnswers[i]);
+  }
+  console.log("\n>>> Overall Grade: " + grade + "% (" + numCorrect + " of 5 responses correct) <<<")
+  if (grade < 80){
+    console.log(">>> Status: FAILED <<<")
+  } 
+  else {
+    console.log(">>> Status: PASSED <<<")
+  }
+  
 }
+  
 
 // Don't write any code below this line //
 // And don't change these or your program will not run as expected //
