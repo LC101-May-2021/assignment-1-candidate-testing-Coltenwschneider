@@ -5,8 +5,8 @@ const input = require('readline-sync');
 // 1.1a: Define candidateName // 
 
 let candidateName = "";
-let numCorrect = 0;
-let grade = 0;
+// let numCorrect = 0;
+// let grade = 0;
 
 // TODO 1.2a: Define question, correctAnswer, and candidateAnswer //
  //let question=""
@@ -57,7 +57,9 @@ function gradeQuiz(candidateAnswers) {
   // else {
   //   console.log("That is incorrect")
   // }
-  
+  let numCorrect = 0;
+  let grade = 0;
+
 
   for (i = 0; i < correctAnswers.length; i++) {
     if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
