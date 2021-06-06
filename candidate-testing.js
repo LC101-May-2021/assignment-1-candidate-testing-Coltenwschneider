@@ -65,7 +65,7 @@ function gradeQuiz(candidateAnswers) {
     }
   }
   
-  return grade = (numCorrect) / (questions.length) * 100;
+  grade = (numCorrect) / (questions.length) * 100;
 
 
   
